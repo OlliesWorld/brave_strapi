@@ -1,0 +1,85 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cards",
+  "info": {
+    "name": "Card",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "alias": {
+      "type": "string"
+    },
+    "origin": {
+      "type": "string"
+    },
+    "power": {
+      "type": "string"
+    },
+    "theWhy": {
+      "type": "richtext"
+    },
+    "quote1": {
+      "type": "text"
+    },
+    "quote2": {
+      "type": "text"
+    },
+    "quote3": {
+      "type": "text"
+    },
+    "mainImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "reign": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Real",
+        "Mythical",
+        "Fantasy"
+      ]
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "cards"
+    },
+    "Slug": {
+      "type": "uid"
+    },
+    "Resource1": {
+      "type": "string"
+    },
+    "Resouce2": {
+      "type": "string"
+    }
+  }
+}
